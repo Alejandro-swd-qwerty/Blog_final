@@ -1,0 +1,205 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*START Este es el header*/
+
+.header-nav-container{
+    background-color: aqua;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.nav-container{
+    background-color: red;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.logo{
+    height: 5vh;
+}
+
+/*END Este es el header*/
+
+/* START Este es el contenido principal/contenido fijo */
+
+.principal-container{
+    margin-bottom: 15px;
+}
+.main-card-container{
+    background-color: blueviolet;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.principal-card{
+    flex-direction: column;
+    background-color: pink;
+    height: 67px;
+}
+
+.feature-card-container{
+    background-color: blue;
+    height: 200px;
+}
+
+/* END Este es el contenido principal/contenido fijo */
+
+/* START Feature */
+.feature-container{
+    background-color: darkgoldenrod;
+    height: 50px;
+    margin-bottom: 15px;
+}
+/* START Feature */
+
+/* START Interactive content */
+.interactive-card{
+    background-color: hotpink;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.static-card{
+    background-color: lightgreen;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+/* START Interactive content */
+
+/* START Article dynamic */
+
+/*.new-article-card{
+    background-color: lightsalmon;
+    height: 200px;
+}*/
+
+/* END Article dynamic */
+
+/* TEST */
+.feed-jquery{
+  max-width:528px;
+  max-height:171px;
+}
+.section-jquery{
+  display: flex;
+  justify-content: center;
+  /* max-width:528px;
+  max-height:171px; */
+  
+}
+.article-jquery{
+  padding: 5px;
+}
+.tag-topic{
+  --x-height-multiplier: 0;
+--baseline-multiplier: 0;
+font-family: medium-content-sans-serif-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+letter-spacing: 0;
+font-weight: 400;
+font-style: normal;
+text-rendering: optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+color: rgba(177, 172, 172, 0.774);
+visibility: visible;
+line-height: 20px;
+font-size: 14px;
+text-align: left;
+display: flex;
+-webkit-box-align: center;
+align-items: center;
+margin-top: 1px;
+margin-bottom: 1px;
+text-transform: capitalize;
+
+}
+.title-jquery{
+  margin: 0;
+  margin-bottom: 5px;
+  color: rgba(0,0,0,.84);
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  transform: translateY(.96px);
+  letter-spacing: -.17px;
+  font-weight: 600;
+  max-height: 40px;
+  text-overflow: ellipsis;
+}
+
+.summary-jquery{
+  text-align: left;
+  margin-top: 2px;
+  margin-bottom: 15px;
+  color: rgba(0,0,0,.54);
+  overflow: hidden!important;
+    max-height: 40px!important;
+    text-overflow: ellipsis!important;
+    display: -webkit-box!important;
+    -webkit-line-clamp: 2!important;
+    -webkit-box-orient: vertical;
+
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  transform: translateY(1.52px);
+  font-weight: 400;
+  overflow: hidden;
+  max-height: 40px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.autor-jquery{
+  font-size: 14px;
+    font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+    color:black;
+    border-top: 4px;
+    border-bottom: 1px;
+    margin-top: 1px;
+}
+.createdate-jquery{
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  font-style: italic;
+  font-size: 11px;
+  align-content: center;
+}
+.img-jquery{
+  height: 150px;
+  line-height: 150px;
+}
+.img-url{
+  margin: 0;
+  top: 50%;
+padding:5px;
+line-height: 20px;
+-webkit-box-flex: 0;
+flex: 0 0 auto;
+margin-right: 0;
+width: 160px;
+height: 160px;
+background-position: 50% 50% ;
+}
+.svg-jquery{
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+
+}
+.buttom-jquery{
+  position: relative;
+}
+.svgIcon-use{
+  position: absolute;
+  right: 40px;
+  top: -1px; 
+} 
+
+/* TEST */
