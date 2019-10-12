@@ -18,33 +18,23 @@ const fillWithPosts = (postsData) => {
 //    $(".container").empty(); //creo que es este el div que sì va a cambiar
     console.log(postsData);
     $.each(postsData, (index,value) => {
-        $("#interactive-cards").append(`
+        $(".new-article-card").append(`
         <div class="section-jquery">
-        <div class="article-jquery col-lg-9">
-            <p class="tag-topic">Hola    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><i>Popular Topic</i></span> </p>
+        <div class="article-jquery px-5 mx-1 col-lg-9 col-md-9 col-12">
             <p class="title-jquery">${value.title}</p>
             <p class="summary-jquery">${value.preview}</p>
             <p class="autor-jquery">${value.name}</p>
             <div class="buttom-jquery">
             <p class="createdate-jquery">
                 <span class="create-jquery">${value.createDate}</span>
-<!--                <span class="svgIcon svgIcon--bookmark svgIcon--25px"><svg class="svgIcon-use" width="22" height="22"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></span>
-                </span>
-                <span class="menu-jquery"></span>-->
-            </p>
+<            </p>
             </div>
         </div>
-        <div class="img-jquery col-lg-3">
+        <div class="img-jquery col-lg-3 col-md-3 col-12">
             <img class="img-url" src="${value.imgUrl}" alt="">
         </div> 
     </div>
-
-        `)
-    }) 
-}
-
-/*
-<!-- START Modal -->
+    <!-- START Modal -->
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
 <div class="modal-dialog modal-dialog-scrollable" role="document">
 <div class="modal-content">
@@ -55,7 +45,7 @@ const fillWithPosts = (postsData) => {
   </button>
   </div>
   <div class="modal-body">
-      <img src="${value.img}" class="card-img" alt="...">
+      <img src="${value.imgUrl}" class="card-img" alt="...">
       <p id="card-sample-date" class="card-text"><small class="text-muted card-date">${value.createDate}</small></p>
       <p id="card-sample-content" class="modal-text card-content">${value.content}</p>
   </div>
@@ -66,8 +56,10 @@ const fillWithPosts = (postsData) => {
 </div>
 </div>
 
+        `)
+    }) 
+}
 
-*/
 
 
 
@@ -88,12 +80,13 @@ const getDataFromButton = () => {
 const getDataFromModal = () => {
     //en el index.html estan estas entradas.
     let title = $("#title").val();
+    let name = $("#name").val();
     let preview = $("#preview").val();
     let content = $("#content").val();
-    let imgUrl = $("#url-img").val();
+    let imgUrl = $("#imgUrl").val();
     let createDate = new Date();
 
-    let postObject = {title, preview, content, imgUrl, createDate}
+    let postObject = {title, name, preview, content, imgUrl, createDate}
     console.log(postObject);
     putsData(postObject);
 };
