@@ -22,23 +22,23 @@ const fillWithPosts = (postsData) => {
 
 postsIds.push(index)
 
-console.log(postsIds);
+//console.log(postsIds);
 
 
     $(".new-articlecard").append(
-      `<div id = "${index}" class="sectionJquery bg-dark col-lg-12 my-5 data-toggle="modal" data-target="#postCard"">
-        <div class="articleJquery bg-white pt-2 col-9"> 
+      `<div  class="sectionJquery bg-dark col-lg-12 my-5 data-toggle="modal" data-target="#postCard"">
+        <div class="articleJquery bg-white pt-2 col-8"> 
           <p class="title-jquery">${value.title}</p>
           <p class="summary-jquery">${value.summary}</p>
           <p class="autor-jquery">${value.name}</p>
           <div class="buttom-jquery">
             <p class="createdate-jquery">
-              <span class="identifier"><img src="images/trash-icon.jpg" title="Eliminar Post"></span>
+              <span id = "${index}" class="postIdentifier"><img src="images/trash-icon.jpg" title="Eliminar Post"></span>
               <span class="create-jquery">${value.createDate}</span>              
             </p>
           </div>
         </div>
-        <div class="imgJquery bg-info p-0 col-3">
+        <div class="imgJquery bg-info p-0 col-4">
           <img class="imgUrl" src="${value.imgUrl}" alt="">
         </div>
       </div>
@@ -100,12 +100,16 @@ const getDataFromModal = () => {
 };
 
 $(document).ready(function(){
-let spanClass = document.getElementsByClassName("identifier");
-let spanTag = document.getElementsByTagName("span");
+let spanClass = document.getElementsByClassName("postIdentifier");
+//let spanTag = document.getElementsByTagName("span");
 
 
-//console.log(spanTag);
-console.log(spanTag);
+console.log(spanClass);
+console.log(`spanClass.length: ${spanClass.length}`);
+console.log(`spanClass.index 0: `);
+console.log(spanClass[0])
+console.log(`spanClass.index 1: `);
+console.log(spanClass[44])
 })
 
 
