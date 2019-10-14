@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+    <!--START Modal-->
+
+    <!-- START Formulario -->
+    <div class="modal fade" id="newPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <h3>Crea tu post</h3>
+                                <form class="border rounded bg-light p-1" id="dataForm">
+                                    <div class="form-group">
+                                        <label>Título</label>
+                                        <input id="title" name="title" type="text" class="form-control txtGuide"
+                                            placeholder="Titulo de tu post" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nombre</label>
+                                        <input id="name" name="title" type="text" class="form-control txtGuide"
+                                            placeholder="¿Como te llamas?" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Descripción</label>
+                                        <textarea class="form-control" id="preview" rows="3"
+                                            placeholder="Describe en breve tu post"></textarea>
+                                    </div>
+                                    <div class="form-group" rows="5">
+                                        <label for="exampleInputPassword1">Contenido del post</label>
+                                        <textarea class="form-control" id="content" rows="3"
+                                            placeholder="Ingresa tu post"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>URL de la imagen</label>
+                                        <input id="imgUrl" name="imgUrl" type="text" class="form-control txtGuide"
+                                            placeholder="URL de tu imagen" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="submit-post" onclick="getDataFromButton()" class="btn btn-success"
+                        data-dismiss="modal">
+                        Enviar Post
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Formulario -->
+
+
+
+
+    <!--END Este es el Modal-->
+
+    <header class="container">
+        <div class="row">
+            <div class="header-container col-12 justify-content-lg-center">
+                <div class="header-nav-container">
+                    <img class="logo"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Medium_logo_Wordmark_Black.svg/1280px-Medium_logo_Wordmark_Black.svg.png"
+                        alt="">
+                    <img src="https://miro.medium.com/max/390/1*emiGsBgJu2KHWyjluhKXQw.png" alt="" class="logo-small">
+                    <button type="button" id="callNewPostFormBtn" class="btn btn-outline-dark" data-toggle="modal"
+                        data-target="#newPost">Subir post</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- START Dybanic CARDS -->
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="new-article-container content-wrapper col-12 col-lg-8">
+                    <div class="new-article-card bg-success">
+                        <div class="section-jquery" data-toggle="modal" data-target="#postCard">
+                            <div class="article-jquery px-5 mx-1 col-lg-9 col-md-9 col-12">
+                                <p class="title-jquery">${value.title}</p>
+                                <p class="summary-jquery">${value.summary}</p>
+                                <p class="autor-jquery">${value.name}</p>
+                                <div class="buttom-jquery">
+                                    <p class="createdate-jquery">
+                                        <span class="create-jquery">${value.createDate}</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="img-jquery col-lg-3 col-md-3 col-12 bg-info">
+                                <img class="img-url" src="${value.imgUrl}" alt="">
+                            </div>
+                        </div>
+                        <!-- START Modal Post -->
+
+                        <div class="modal fade" id="postCard" tabindex="-1" role="dialog"
+                            aria-labelledby="postCardTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title font-weight-bold" id="postCardTitle">${value.title}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="${value.imgUrl}" class="card-img" alt="...">
+                                        <p id="card-sample-date" class="card-text"><small
+                                                class="text-muted card-date">${value.createDate}</small></p>
+                                        <p id="card-sample-content" class="modal-text card-content">${value.content}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- END Modal Post -->
+                        <div class="section-jquery bg-dark" data-toggle="modal" data-target="#postCard">
+                            <div class="article-jquery px-5 mx-1 col-lg-9 col-md-9 col-12">
+                                <p class="title-jquery">${value.title}</p>
+                                <p class="summary-jquery">${value.summary}</p>
+                                <p class="autor-jquery">${value.name}</p>
+                                <div class="buttom-jquery">
+                                    <p class="createdate-jquery">
+                                        <span class="create-jquery">${value.createDate}</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="img-jquery col-lg-3 col-md-3 col-12 bg-info">
+                                <img class="img-url" src="${value.imgUrl}" alt="">
+                            </div>
+                        </div>
+                        <!-- START Modal Post -->
+
+                        <div class="modal fade" id="postCard" tabindex="-1" role="dialog"
+                            aria-labelledby="postCardTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title font-weight-bold" id="postCardTitle">${value.title}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="${value.imgUrl}" class="card-img" alt="...">
+                                        <p id="card-sample-date" class="card-text"><small
+                                                class="text-muted card-date">${value.createDate}</small></p>
+                                        <p id="card-sample-content" class="modal-text card-content">${value.content}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- END Modal Post -->
+                        <div class="section-jquery" data-toggle="modal" data-target="#postCard">
+                            <div class="article-jquery bg-warning px-5 mx-1 col-lg-9 col-md-9 col-12">
+                                <p class="title-jquery">${value.title}</p>
+                                <p class="summary-jquery">${value.summary}</p>
+                                <p class="autor-jquery">${value.name}</p>
+                                <div class="buttom-jquery">
+                                    <p class="createdate-jquery">
+                                        <span class="create-jquery">${value.createDate}</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="img-jquery col-lg-3 col-md-3 col-12 bg-info">
+                                <img class="img-url" src="${value.imgUrl}" alt="">
+                            </div>
+                        </div>
+                        <!-- START Modal Post -->
+
+                        <div class="modal fade" id="postCard" tabindex="-1" role="dialog"
+                            aria-labelledby="postCardTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title font-weight-bold" id="postCardTitle">${value.title}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="${value.imgUrl}" class="card-img" alt="...">
+                                        <p id="card-sample-date" class="card-text"><small
+                                                class="text-muted card-date">${value.createDate}</small></p>
+                                        <p id="card-sample-content" class="modal-text card-content">${value.content}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- END Modal Post -->
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- END Dybanic CARDS -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+
+
+
+
+</body>
+
+</html>
