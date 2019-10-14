@@ -27,8 +27,7 @@ const fillWithPosts = (postsData) => {
           <div class="buttom-jquery">
             <p class="createdate-jquery">
               <span><img src="images/trash-icon.jpg" title="Eliminar Post"></span>
-              <span class="create-jquery">${value.createDate}</span>
-              
+              <span class="create-jquery">${value.createDate}</span>              
             </p>
           </div>
         </div>
