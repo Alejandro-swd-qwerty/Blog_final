@@ -103,3 +103,6 @@ const putsData = (response) => {
     }
   });
 }
+  $(document).ready(function() {
+    $("").jPaginate();
+  })
