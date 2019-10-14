@@ -40,9 +40,16 @@ height: 70px;
   height: 20px;
   margin: 25px;
 }
+
 .btn-outline-dark{
   position: absolute;
   right: 20px;
+  top: 20px;
+}
+
+.sorter-button{
+  position: absolute;
+  right: 120px;
   top: 20px;
 }
 /*END Este es el header*/

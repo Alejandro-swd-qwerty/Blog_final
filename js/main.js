@@ -15,8 +15,8 @@ const getPosts = () => {
 getPosts() //aqui podria esta la funcion de loadingview pero si no hay màs que una pagina, pos mejor solo asì
 
 const fillWithPosts = (postsData) => {
-//    $(".container").empty(); //creo que es este el div que sì va a cambiar
-    console.log(postsData);
+$(".new-article-card").empty(); //creo que es este el div que sì va a cambiar
+    //console.log(postsData);
     $.each(postsData, (index,value) => {
         $(".new-article-card").append(`
         <div class="section-jquery">
@@ -84,7 +84,7 @@ const getDataFromModal = () => {
     let preview = $("#preview").val();
     let content = $("#content").val();
     let imgUrl = $("#imgUrl").val();
-    let createDate = new Date();
+    let createDate = new Date().toLocaleString('en-GB', { timeZone: 'UTC' });
 
     let postObject = {title, name, preview, content, imgUrl, createDate}
     console.log(postObject);
@@ -103,6 +103,61 @@ const putsData = (response) => {
 }
 
 
+function getSelecter(){
+  let propiedadAOrdenar = "";
+
+           if ($("#inlineRadio1").is( ":checked" )){
+              //alert("propiedad nombre")
+              return propiedadAOrdenar = "name";
+          }else if ($("#inlineRadio2").is( ":checked" )){
+              //alert("propiedad fecha")
+              return propiedadAOrdenar = "createDate";
+          }else if ($("#inlineRadio3").is( ":checked" )){
+              //alert("propiedad titulo")
+              return propiedadAOrdenar = "title";
+          }
+
+}
+
+var sortThisPls = (response, propiedadAOrdenar) => {
+  let sinCorchetes = "";
+  let algo = response.sort(function (a, b) {
+      var x = a[propiedadAOrdenar];
+      var y = b[propiedadAOrdenar];
+
+      if (true) {
+          return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+      }
+  });
+  //console.log(algo)
+  sinCorchetes = algo.slice(1,-1) 
+  //console.log(typeof(sinCorchetes))
+  return sinCorchetes
+}
+
+
+function ORDER_PLS() {
+  $.ajax({
+      method:"GET",
+      url: 'https://blog-general.firebaseio.com/post/.json',
+      success: (response) => {
+          //alert("sacando y ordenado")
+          //console.log(response)
+          let array = []
+          for (cosas in response){
+              //console.log(response[cosas])
+              array.push(response[cosas])
+          }
+          fillWithPosts(sortThisPls(array, getSelecter()));
+
+          let fecha = new Date().toLocaleString('en-GB', { timeZone: 'UTC' }) //////ASI PONGAN LA FECHA
+          console.log(fecha)
+
+      }
+
+  });
+
+}
 
 /*
 
@@ -175,5 +230,6 @@ const putsData = (response) => {
 </header>
 */
 /*
-<span class="svgIcon svgIcon--logoMonogram svgIcon--45px"><svg class="svgIcon-use" width="45" height="45"><path d="M5 40V5h35v35H5zm8.56-12.627c0 .555-.027.687-.318 1.03l-2.457 2.985v.396h6.974v-.396l-2.456-2.985c-.291-.343-.344-.502-.344-1.03V18.42l6.127 13.364h.714l5.256-13.364v10.644c0 .29 0 .342-.185.528l-1.848 1.796v.396h9.19v-.396l-1.822-1.796c-.184-.186-.21-.238-.21-.528V15.937c0-.291.026-.344.21-.528l1.823-1.797v-.396h-6.471l-4.622 11.542-5.203-11.542h-6.79v.396l2.14 2.64c.239.292.291.37.291.768v10.353z"></path></svg></span>
-*/
+<span class="svgIcon svgIcon--logoMonogram svgIcon--45px"><svg class="svgIcon-use" width="45" height="45"><path d="M5 40V5h35v35H5zm8.56-12.627c0 .555-.027.687-.318 1.03l-2.457 2.985v.396h6.974v-.396l-2.456-2.985c-.291-.343-.344-.502-.344-1.03V18.42l6.127 13.364h.714l5.256-13.364v10.644c0 .29 0 .342-.185.528l-1.848 1.796v.396h9.19v-.396l-1.822-1.796c-.184-.186-.21-.238-.21-.528V15.937c0-.291.026-.344.21-.528l1.823-1.797v-.396h-6.471l-4.622 11.542-5.203-11.542h-6.79v.396l2.14 2.64c.239.292.291.37.291.768v10.353z"></path></svg></span>*/
+
+//console.log("success")
