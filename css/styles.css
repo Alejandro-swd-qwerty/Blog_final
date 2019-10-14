@@ -307,11 +307,13 @@ transition: transform .5s;
 /* contenedor*/
   .imgJquery{
    height: 22vh;
+   display: flex;
+   justify-conten: center;
   }
- /*imagen*/
 
+ /*imagen*/
   .imgUrl{
-    width: 100%;
+    width: auto;
     height: 100%;
   }
 

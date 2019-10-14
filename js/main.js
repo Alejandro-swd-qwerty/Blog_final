@@ -7,7 +7,7 @@ const getPosts = () => {
     //hay que poner la url, que puede ser  "https://blog-5g.firebaseio.com/blogGeneral/posts/.json" 
     success: (response) => {
       fillWithPosts(response)
-      //console.log(response)
+      console.log(response)
     }
   });
 }
@@ -16,13 +16,9 @@ getPosts() //aqui podria esta la funcion de loadingview pero si no hay màs que 
 
 const fillWithPosts = (postsData) => {
 
-  let postsIds = [];
-
   $.each(postsData, (index, value) => {
 
-postsIds.push(index)
 
-//console.log(postsIds);
 
 
     $(".new-articlecard").append(
@@ -99,19 +95,25 @@ const getDataFromModal = () => {
 
 };
 
-$(document).ready(function(){
-let spanClass = document.getElementsByClassName("postIdentifier");
-//let spanTag = document.getElementsByTagName("span");
 
 
-console.log(spanClass);
+let spanClass
+spanClass = document.getElementsByClassName("postIdentifier");
+
+console.log(spanClass)
 console.log(`spanClass.length: ${spanClass.length}`);
-console.log(`spanClass.index 0: `);
-console.log(spanClass[0])
-console.log(`spanClass.index 1: `);
-console.log(spanClass[44])
-})
 
+//console.log(`spanClass.index 0: `);
+//console.log(spanClass[0].attributes[0])
+//console.log(`spanClass.index 1: `);
+//console.log(spanClass[1].attributes[0])
+
+/*
+let spanArray = Array.from(spanClass)
+console.log(`Array de SPANS `)
+console.log(spanArray)
+
+*/
 
 const putsData = (response) => {
   $.ajax({
@@ -125,10 +127,21 @@ const putsData = (response) => {
   });
 }
 
+/*
+const delPost = () => {
+  $.ajax({ 
+    method: "GET", 
+    url: "https://blog-general.firebaseio.com/post/.json",
+    success: (response) => {
+      
+    let postsIds = [];
+    postsIds.push();
+    console.log(postsIds);
+}
 
 //$(document).ready(function(){
   $("p").click(function() {
   $(this).slideUp()
   });
  // });
- 
+ */
