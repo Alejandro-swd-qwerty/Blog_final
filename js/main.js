@@ -7,7 +7,7 @@ const getPosts = () => {
     //hay que poner la url, que puede ser  "https://blog-5g.firebaseio.com/blogGeneral/posts/.json" 
     success: (response) => {
       fillWithPosts(response)
-      //           console.log(response)
+      //console.log(response)
     }
   });
 }
@@ -15,18 +15,25 @@ const getPosts = () => {
 getPosts() //aqui podria esta la funcion de loadingview pero si no hay màs que una pagina, pos mejor solo asì
 
 const fillWithPosts = (postsData) => {
-  //    $(".container").empty(); //creo que es este el div que sì va a cambiar
-  console.log(postsData);
+
+  let postsIds = [];
+
   $.each(postsData, (index, value) => {
+
+postsIds.push(index)
+
+console.log(postsIds);
+
+
     $(".new-articlecard").append(
-      `<div id="${index}"class="sectionJquery bg-dark col-lg-12 my-5" data-toggle="modal" data-target="#postCard">
+      `<div id = "${index}" class="sectionJquery bg-dark col-lg-12 my-5 data-toggle="modal" data-target="#postCard"">
         <div class="articleJquery bg-white pt-2 col-9"> 
           <p class="title-jquery">${value.title}</p>
           <p class="summary-jquery">${value.summary}</p>
           <p class="autor-jquery">${value.name}</p>
           <div class="buttom-jquery">
             <p class="createdate-jquery">
-              <span><img src="images/trash-icon.jpg" title="Eliminar Post"></span>
+              <span class="identifier"><img src="images/trash-icon.jpg" title="Eliminar Post"></span>
               <span class="create-jquery">${value.createDate}</span>              
             </p>
           </div>
@@ -92,6 +99,16 @@ const getDataFromModal = () => {
 
 };
 
+$(document).ready(function(){
+let spanClass = document.getElementsByClassName("identifier");
+let spanTag = document.getElementsByTagName("span");
+
+
+//console.log(spanTag);
+console.log(spanTag);
+})
+
+
 const putsData = (response) => {
   $.ajax({
     method: "POST",
@@ -103,3 +120,11 @@ const putsData = (response) => {
     }
   });
 }
+
+
+//$(document).ready(function(){
+  $("p").click(function() {
+  $(this).slideUp()
+  });
+ // });
+ 

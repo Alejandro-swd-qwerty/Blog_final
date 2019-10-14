@@ -351,7 +351,31 @@
     <div class="container">
       <div class="row">
         <div class="new-article-container bg-success content-wrapper col-12 col-lg-8">
-          <div class="new-articlecard bg-primary px-4 col-lg-12"></div>
+          <div class="new-articlecard bg-primary px-4 col-lg-12">
+
+
+            <div class="sectionJquery bg-dark col-lg-12 my-5">
+              <div class="articleJquery bg-white pt-2 col-9"> 
+                <p class="title-jquery">${value.title}</p>
+                <p class="summary-jquery">${value.summary}</p>
+                <p class="autor-jquery">${value.name}</p>
+                <div class="buttom-jquery">
+                  <p class="createdate-jquery">
+                    <span id="${index}"><img src="images/trash-icon.jpg" title="Eliminar Post"></span>
+                    <span class="create-jquery">${value.createDate}</span>              
+                  </p>
+                </div>
+              </div>
+              <div class="imgJquery bg-info p-0 col-3">
+                <img class="imgUrl" src="${value.imgUrl}" alt="">
+              </div>
+            </div>
+
+
+
+
+
+          </div>
         </div> 
       </div>
     </div>
