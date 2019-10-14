@@ -5,164 +5,224 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Medium</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
+  <!--START modal-->
 
-  <!-- CONSEJO ALINEACION ISRA
-  <div class="container-fluid ">
-      <div class="row">
-        <div class="col-12 bg-dark px-5">
-          <div class="bg-light">
-            <h1>zxvzxcvzxcpx-5</h1>
-          </div>
+  <div class="modal fade" id="newPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-      </div>
-    </div>
-
-    <div class="container-fluid px-5">
-        <div class="row">
-          <div class="col-12 bg-dark ">
-            <div class="bg-light">
-              <h1>aasdfasdfasd</h1>
-            </div>
-          </div>
-        </div>
-      </div>
--->
-   <!--START Este es el Modal-->
-   
-   <!--END Este es el Modal-->
-
-   <!--START Este es el header-->
-
-  <header class="container">
-    <div class="row">
-      <div class="header-container col-12 justify-content-lg-center">
-        <div class="header-nav-container">
-          <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Medium_logo_Wordmark_Black.svg/1280px-Medium_logo_Wordmark_Black.svg.png" alt="">
-          <img src="https://miro.medium.com/max/390/1*emiGsBgJu2KHWyjluhKXQw.png" alt="" class="logo-small">
-          <button type="button" id="callNewPostFormBtn" class="btn btn-outline-dark" data-toggle="modal" data-target="#newPost">Subir post</button>
-        </div>
-      </div>
-    </div> 
-  </header>
-
-          <!-- Modal -->
-          <div class="modal fade" id="newPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-12 mt-3">
-                        <h3>Crea tu post</h3>
-                        <form class="border rounded bg-light p-1" id="dataForm">
-                          <div class="form-group">
-                            <label>Título</label>
-                            <input id="title" name="title" type="text" class="form-control txtGuide"
-                              placeholder="Titulo de tu post" />
-                          </div>
-                          <div class="form-group">
-                            <label>Nombre</label>
-                            <input id="name" name="title" type="text" class="form-control txtGuide"
-                              placeholder="¿Como te llamas?" />
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputPassword1">Descripción</label>
-                            <textarea class="form-control" id="preview" rows="3"
-                              placeholder="Describe en breve tu post"></textarea>
-                          </div>
-                          <div class="form-group" rows="5">
-                            <label for="exampleInputPassword1">Contenido del post</label>
-                            <textarea class="form-control" id="content" rows="3"
-                              placeholder="Ingresa tu post"></textarea>
-                          </div>
-                          <div class="form-group">
-                            <label>URL de la imagen</label>
-                            <input id="imgUrl" name="imgUrl" type="text" class="form-control txtGuide"
-                              placeholder="URL de tu imagen" />
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" id="submit-post" onclick="getDataFromButton()" class="btn btn-success"
-                    data-dismiss="modal">
-                    Enviar Post
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-    <!--START Este es el contenido principal/contenido fijo-->
-
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-4 card-static">
-          <div class="card ">
-            <img src="https://miro.medium.com/max/2400/1*0lmoQm4MFCes3GCbZ65uhQ.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title title-jquery-card">Modality Is the One UX Concept That Most Designers</h5>
-              <p class="card-text autor-jquery-card">Although this may work in many cases, there are proven common standards that help</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-4">
+        <div class="modal-body">
           <div class="container">
             <div class="row">
-              <div class="col-12">
-                <div class="card mb-3">
-                  <div class="row no-gutters">
-                    <div class="col-md-4">
-                      <img src="https://miro.medium.com/max/2000/1*ICJQ0kZSatZeZJBbqOTFRw.gif" class="card-img" alt="...">
+              <div class="col-12 mt-3">
+                <h3>Crea tu post</h3>
+                <form class="border rounded bg-light p-1" id="dataForm">
+                  <div class="form-group">
+                    <label>Título</label>
+                    <input id="title" name="title" type="text" class="form-control txtGuide"
+                      placeholder="Titulo de tu post" />
+                  </div>
+                  <div class="form-group">
+                    <label>Nombre</label>
+                    <input id="name" name="title" type="text" class="form-control txtGuide"
+                      placeholder="¿Como te llamas?" />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Descripción</label>
+                    <textarea class="form-control" id="preview" rows="3"
+                      placeholder="Describe en breve tu post"></textarea>
+                  </div>
+                  <div class="form-group" rows="5">
+                    <label for="exampleInputPassword1">Contenido del post</label>
+                    <textarea class="form-control" id="content" rows="3" placeholder="Ingresa tu post"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>URL de la imagen</label>
+                    <input id="img-Url" name="imgUrl" type="text" class="form-control txtGuide"
+                      placeholder="URL de tu imagen" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="submit-post" onclick="getDataFromButton()" class="btn btn-success"
+            data-dismiss="modal">
+            Enviar Post
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--END modal-->
+
+  <!--START header-->
+  <div class="container container-nav-bar">
+    <div class="row header">
+      <div class="header-container col-12 m-lg-0 p-lg-0">
+        <div class="row">
+          <div class="header-nav-container col-lg-4 col-12 d-flex justify-content-start m-lg-0 p-lg-0">
+            <img class="logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Medium_logo_Wordmark_Black.svg/1280px-Medium_logo_Wordmark_Black.svg.png"
+              alt="">
+            <img class="logo-small" src="https://miro.medium.com/max/390/1*emiGsBgJu2KHWyjluhKXQw.png" alt="">
+          </div>
+          <div
+            class="header-nav-button col-lg-6 col-12 d-lg-flex justify-content-lg-end d-flex justify-content-start m-lg-0 p-lg-0">
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2 border border-light button-style-header" type="Search Medium.."
+                placeholder="Search Medium.." aria-label="Search Medium..">
+              <button class="btn btn-outline-dark my-2 my-sm-0 button-style-header" type="submit">Search</button>
+            </form>
+          </div>
+          <div class="col-lg-2 col-12 d-lg-flex justify-content-lg-end d-flex justify-content-start m-lg-0 p-lg-0 ">
+            <form class="form-inline my-2 mx-lg-4 my-lg-0">
+              <button type="button" id="callNewPostFormBtn" class="btn btn-outline-dark button-style-header"
+                data-toggle="modal" data-target="#newPost">Post upload</button>
+              <form class="form-inline"></form>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--END header-->
+
+
+  <div class="content-wrapper m-0 p-0">
+
+    <!--START nav topics-->
+    <div class="container container-topics d-none d-lg-block">
+      <div class="row d-flex justify-content-around">
+        <div class="col-12">
+          <ul class="nav row d-flex justify-content-around">
+            <li class="nav-item">
+              <a href="https://onezero.medium.com/" class="nav-link-item text-muted">ONEZERO</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://elemental.medium.com/" class="nav-link-item text-muted">ELEMENTAL</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://gen.medium.com/" class="nav-link-item text-muted">GEN</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://zora.medium.com/" class="nav-link-item text-muted">ZORA</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://forge.medium.com/" class="nav-link-item text-muted">FORGE</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://humanparts.medium.com/" class="nav-link-item text-muted">HUMAN</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://marker.medium.com/" class="nav-link-item text-muted">MARKER</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://medium.com/topic/self" class="nav-link-item text-muted">SELF</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://medium.com/topic/technology" class="nav-link-item text-muted">TECH</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://heated.medium.com/" class="nav-link-item text-muted">HEATED</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://modus.medium.com/" class="nav-link-item text-muted">MODUS</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://medium.com/topics" class="nav-link-item text-muted">MORE</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://medium.com/topic/startups" class="nav-link-item text-muted">STARTUPS</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--END nav topics-->
+
+    <!--START principal content-->
+    <div class="container container-card-group">
+      <div class="row card-group-main">
+        <div class="card-main col-12 col-lg-4 mt-4 m-0 p-0">
+          <div class="mb-3 card-img-principal"><img
+              src="https://cdn-images-1.medium.com/focal/832/302/49/5/1*0GUrVNtd9-f9NOrhT0AgGA.png" alt=""
+              class="card-img-top"></div>
+          <div class="card-body-principal ml-lg-5 ml-md-2">
+            <p class="card-title-principal mt-2">How to Change a Mind</p>
+            <p class="card-summary-principal">Missy spent more than five years getting her husband to leave a cult, but
+              the breakthrough was simple</p>
+            <p class="card-autor-principal">Eleanor Gordon-Smith in Forge</p>
+            <p class="card-create-pricipal">Oct 14 - 11 min read</p>
+          </div>
+        </div>
+        <div class="card-group-inside col-12 col-lg-5 mt-4">
+          <div class="card-inside">
+            <div class="container contaioner-card-group-static">
+              <div class="row ccard-group-main-static">
+                <div class="card-main col-12">
+                  <div class="row card-group-topics">
+                    <div class="card-img-topics col-4">
+                      <img class="mw-100"
+                        src="https://cdn-images-1.medium.com/focal/200/200/36/44/1*jxlB4nsmVO-f0Hde3BWCNA.jpeg" alt="">
                     </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title title-jquery-card">Modality Is the One UX Concept That Most Designers</h5>
-                        <p class="card-text autor-jquery-card"><small class="text-muted">Last updated 3 mins ago</small></p>
-                      </div>
+                    <div class="card-content-topics col-8 ">
+                      <p class="card-title-topics">Yes, Critical Black Joy Exists at Comic-Con</p>
+                      <p class="card-autor-topics">Amari Boyd in ZORA</p>
+                      <p class="card-create-topics">Oct 14 - 7 min read</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-12">
-                <div class="card mb-3">
-                  <div class="row no-gutters">
-                    <div class="col-md-4">
-                      <img src="https://miro.medium.com/max/1351/1*6OKsQ5Jg3oDP9iiNwWcKWQ.png" class="card-img" alt="...">
+            </div>
+          </div>
+          <div class="card-inside">
+            <div class="container contaioner-card-group-static">
+              <div class="row ccard-group-main-static">
+                <div class="card-main col-12">
+                  <div class="row card-group-topics">
+                    <div class="card-img-topics col-4">
+                      <img class="mw-100"
+                        src="https://cdn-images-1.medium.com/focal/200/200/48/57/1*NfxQcQjiJVqR0O0-FxLn1A.jpeg" alt="">
                     </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title title-jquery-card">Modality Is the One UX Concept That Most Designers</h5>
-                        <p class="card-text autor-jquery-card"><small class="text-muted">Last updated 3 mins ago</small></p>
-                      </div>
+                    <div class="card-content-topics col-8 ">
+                      <p class="card-title-topics">How Immersion Into My Own Food Culture</p>
+                      <p class="card-autor-topics">Melissa Guida-Richards in Zora</p>
+                      <p class="card-create-topics">Oct 11 - 15 min read</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-12">
-                <div class="card mb-3">
-                  <div class="row no-gutters">
-                    <div class="col-md-4">
-                      <img src="https://miro.medium.com/max/1200/1*36MELEhgZsPFuzlZvObnxA.gif" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title title-jquery-card">Modality Is the One UX Concept That Most Designers</h5>
-                        <p class="card-text autor-jquery-card"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card-inside">
+            <div class="card-inside">
+              <div class="container contaioner-card-group-static">
+                <div class="row ccard-group-main-static">
+                  <div class="card-main col-12">
+                    <div class="row card-group-topics">
+                      <div class="card-img-topics col-4">
+                        <img class="mw-100"
+                          src="https://cdn-images-1.medium.com/focal/200/200/50/55/1*efGguWRt7qh-jDVKjFPTNQ.jpeg"
+                          alt="">
+                      </div>
+                      <div class="card-content-topics col-8 ">
+                        <p class="card-title-topics">Is It Possible to Hack Into a Spacesuit?</p>
+                        <p class="card-autor-topics">Wes O´Donnell in OneZero</p>
+                        <p class="card-create-topics">Oct 4 - 5 min read</p>
                       </div>
                     </div>
                   </div>
@@ -171,116 +231,182 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-4">
-          <div class="card">
-            <img src="https://miro.medium.com/max/1920/1*YFi6tI2XSykjDfBXzpyIOg.png" class="card-img-top" alt="...">
+        <div class="card-main col-12 col-lg-3 mt-4 d-none d-lg-block">
+          <div class="mb-3 card-img-principal"><img
+              src="https://cdn-images-1.medium.com/focal/1008/444/63/28/1*Nj3OZx5JyCTHNhKVDTWOdQ.jpeg" alt=""
+              class="card-img-top"></div>
+          <div class="card-body-principal">
+            <p class="card-title-principal-2 mt-2">The Complain Brag Is Even Worse</p>
+            <p class="card-summary-principal">It’s annoying, but women in particular may have a hard time breaking the
+              habit</p>
+            <p class="card-autor-principal">Lauren Larson in Forge</p>
+            <p class="card-create-pricipal">Oct 12 - 5 min read</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--END principal content-->
+
+    <!--START nav see all-->
+    <div class="container">
+      <div class="row">
+        <div class="col 12 d-flex justify-content-end mt-3 mb-0">
+          <p id="button-see-all"><a href="https://medium.com/topic/editors-picks"></a>SEE ALL FEUTURED ›</p>
+        </div>
+      </div>
+    </div>
+    <hr class="line-bottom m-0 p-0 my-2">
+    <!--END nav see all-->
+
+    <!--START subscriber-->
+    <div class="container ">
+      <div class="container-subscriber mb-3 m-0 p-0">
+        <div class="row m-0 p-0">
+          <div class="col-md-3 col-12 m-0 p-0">
+            <img class="justify-content-start card-img-subscriber mw-100"
+              src="https://cdn-images-1.medium.com/max/800/1*b3nQCtGsY2BWPFO_sUVRrg.png" alt="...">
+            <img class="justify-content-start card-img-subscriber-small mw-100"
+              src="https://cdn-images-1.medium.com/max/375/1*tU-oRhmSFYhT1ssvkv40hA.png" alt="...">
+          </div>
+          <div class="col-md-9 col-12 card-content-subscriber">
             <div class="card-body">
-              <h5 class="card-title title-jquery-card">Modality Is the One UX Concept That Most Designers</h5>
-              <p class="card-text autor-jquery-card">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title-subscriber">Never miss a story</h5>
+              <p class="card-text-subscriber my-3">Sign up for Medium’s Daily Digest and get the best of Medium,
+                tailored for you.</p>
+              <form class="form-inline mt-3">
+                <input class="mr-sm-5 text-style-subscriber" type="Email Address" placeholder="Email Address"
+                  aria-label="Email Address">
+                <button class="btn btn-dark my-2 my-sm-0 button-style-subscriber" type="submit">Sing up</button>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!--END subscriber-->
 
-  <!--END Este es el contenido principal/contenido fijo-->
 
-  <!--START Feature-->
-  <div class="container">
-    <div class="row">
-      <div class="feature-container col-12">
-          <p>
-            <span id="feature-paragraph"></span>
-            <hr>
-          </p>
+    <!--START static content-->
+    <!--
+        <div class="container">
+            <div class="row">
+                <div class="container-article-static col-lg-8">
+                    
+                </div>
+                <div class="container-popular-static col-lg-4">
+
+                </div>
+            </div>
         </div>
-    </div>
-  </div>
-  
-  <!--END Feature-->
-
-  <!--START Interactive content-->
-  <section>
+        -->
     <div class="container">
       <div class="row">
         <div class="interactive-container col-12 col-lg-8">
 
-        <!--START CARD -->  
-        <div class="col-12 mt-2 mb-4"> <!--Feed-->
-          <div class="section-jquery">
+          <!--START CARD -->
+          <div class="col-12 mt-2 mb-4">
+            <!--Feed-->
+            <div class="section-jquery">
               <div class="article-jquery">
-                  <p class="tag-topic">Hola    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><i>Popular Topic</i></span> </p>
-                  <p class="title-jquery" data-toggle="modal" data-target="#exampleModalScrollable" >What I Learned From Quitting Coffee After 15 years</p>
-                  <p class="summary-jquery">Angelo Belardi in Better Humans</p>
-                  <p class="autor-jquery">Lorem ipsum dolor sit amet.</p>
-                  <div class="buttom-jquery">
+                <p class="tag-topic">Hola &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><i>Popular
+                      Topic</i></span> </p>
+                <p class="title-jquery" data-toggle="modal" data-target="#exampleModalScrollable">What I Learned From
+                  Quitting Coffee After 15 years</p>
+                <p class="summary-jquery">Angelo Belardi in Better Humans</p>
+                <p class="autor-jquery">Lorem ipsum dolor sit amet.</p>
+                <div class="buttom-jquery">
                   <p class="createdate-jquery">
-                      <span class="create-jquery">11 de Octubre del 2019</span>
-                      <span class="svgIcon svgIcon--bookmark svgIcon--25px"><svg class="svgIcon-use" width="22" height="22"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></span>
-                      </span>
-                      <span class="menu-jquery"></span>
+                    <span class="create-jquery">11 de Octubre del 2019</span>
+                    <span class="svgIcon svgIcon--bookmark svgIcon--25px"><svg class="svgIcon-use" width="22"
+                        height="22">
+                        <path
+                          d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z"
+                          fill-rule="evenodd"></path>
+                      </svg></span>
+                    </span>
+                    <span class="menu-jquery"></span>
                   </p>
-                  </div>
+                </div>
               </div>
               <div class="img-jquery">
-                  <img class="img-url" src="https://cdn-images-1.medium.com/fit/c/304/312/1*U6X7P89peTqBVU72UYJK8Q.jpeg" alt="">
-              </div> 
+                <img class="img-url" src="https://cdn-images-1.medium.com/fit/c/304/312/1*U6X7P89peTqBVU72UYJK8Q.jpeg"
+                  alt="">
+              </div>
+            </div>
           </div>
-        </div>
-        <!--END CARD-->
+          <!--END CARD-->
 
-        <!--START CARD -->  
-        <div class="col-12 mt-2 mb-4"> <!--Feed-->
-          <div class="section-jquery">
+          <!--START CARD -->
+          <div class="col-12 mt-2 mb-4">
+            <!--Feed-->
+            <div class="section-jquery">
               <div class="article-jquery">
-                  <p class="tag-topic">Hola    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><i>Popular Topic</i></span> </p>
-                  <p class="title-jquery" data-toggle="modal" data-target="#exampleModalScrollable" >What I Learned From Quitting Coffee After 15 years</p>
-                  <p class="summary-jquery">Angelo Belardi in Better Humans</p>
-                  <p class="autor-jquery">Lorem ipsum dolor sit amet.</p>
-                  <div class="buttom-jquery">
+                <p class="tag-topic">Hola &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><i>Popular
+                      Topic</i></span> </p>
+                <p class="title-jquery" data-toggle="modal" data-target="#exampleModalScrollable">What I Learned From
+                  Quitting Coffee After 15 years</p>
+                <p class="summary-jquery">Angelo Belardi in Better Humans</p>
+                <p class="autor-jquery">Lorem ipsum dolor sit amet.</p>
+                <div class="buttom-jquery">
                   <p class="createdate-jquery">
-                      <span class="create-jquery">11 de Octubre del 2019</span>
-                      <span class="svgIcon svgIcon--bookmark svgIcon--25px"><svg class="svgIcon-use" width="22" height="22"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></span>
-                      </span>
-                      <span class="menu-jquery"></span>
+                    <span class="create-jquery">11 de Octubre del 2019</span>
+                    <span class="svgIcon svgIcon--bookmark svgIcon--25px"><svg class="svgIcon-use" width="22"
+                        height="22">
+                        <path
+                          d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z"
+                          fill-rule="evenodd"></path>
+                      </svg></span>
+                    </span>
+                    <span class="menu-jquery"></span>
                   </p>
-                  </div>
+                </div>
               </div>
               <div class="img-jquery">
-                  <img class="img-url" src="https://cdn-images-1.medium.com/fit/c/304/312/1*U6X7P89peTqBVU72UYJK8Q.jpeg" alt="">
-              </div> 
+                <img class="img-url" src="https://cdn-images-1.medium.com/fit/c/304/312/1*U6X7P89peTqBVU72UYJK8Q.jpeg"
+                  alt="">
+              </div>
+            </div>
           </div>
-        </div>
-        <!--END CARD-->  
+          <!--END CARD-->
 
-        <!--START CARD -->  
-        <div class="col-12 mt-2 mb-4"> <!--Feed-->
-          <div class="section-jquery">
+          <!--START CARD -->
+          <div class="col-12 mt-2 mb-4">
+            <!--Feed-->
+            <div class="section-jquery">
               <div class="article-jquery">
-                  <p class="tag-topic">Hola    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><i>Popular Topic</i></span> </p>
-                  <p class="title-jquery" data-toggle="modal" data-target="#exampleModalScrollable" >What I Learned From Quitting Coffee After 15 years</p>
-                  <p class="summary-jquery">Angelo Belardi in Better Humans</p>
-                  <p class="autor-jquery">Lorem ipsum dolor sit amet.</p>
-                  <div class="buttom-jquery">
+                <p class="tag-topic">Hola &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><i>Popular
+                      Topic</i></span> </p>
+                <p class="title-jquery" data-toggle="modal" data-target="#exampleModalScrollable">What I Learned From
+                  Quitting Coffee After 15 years</p>
+                <p class="summary-jquery">Angelo Belardi in Better Humans</p>
+                <p class="autor-jquery">Lorem ipsum dolor sit amet.</p>
+                <div class="buttom-jquery">
                   <p class="createdate-jquery">
-                      <span class="create-jquery">11 de Octubre del 2019</span>
-                      <span class="svgIcon svgIcon--bookmark svgIcon--25px"><svg class="svgIcon-use" width="22" height="22"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></span>
-                      </span>
-                      <span class="menu-jquery"></span>
+                    <span class="create-jquery">11 de Octubre del 2019</span>
+                    <span class="svgIcon svgIcon--bookmark svgIcon--25px"><svg class="svgIcon-use" width="22"
+                        height="22">
+                        <path
+                          d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z"
+                          fill-rule="evenodd"></path>
+                      </svg></span>
+                    </span>
+                    <span class="menu-jquery"></span>
                   </p>
-                  </div>
+                </div>
               </div>
               <div class="img-jquery">
-                  <img class="img-url" src="https://cdn-images-1.medium.com/fit/c/304/312/1*U6X7P89peTqBVU72UYJK8Q.jpeg" alt="">
-              </div> 
+                <img class="img-url" src="https://cdn-images-1.medium.com/fit/c/304/312/1*U6X7P89peTqBVU72UYJK8Q.jpeg"
+                  alt="">
+              </div>
+            </div>
           </div>
-        </div>
-        <!--END CARD-->  
-        
+          <!--END CARD-->
+
 
         </div>
-        <div class="static-aside col-12 col-lg-4"> <!--Esta es fija-->  
-        <!--START ASIDE-->
+        <div class="static-aside col-12 col-lg-4">
+          <!--Esta es fija-->
+          <!--START ASIDE-->
           <div class="container-fluid">
             <div class="">
               <div class="text-title-content">
@@ -294,7 +420,12 @@
                 <div class="col-10">
                   <p class="text-title mb-1"><b>How To Wake Up at 5 A.M. Every Day</b></p>
                   <p class="text-body mb-1">Bryan Ye in Better Humans</p>
-                  <p class="text-body-date">Oct 13 - 15 min read <span class="u-paddingLeft4"><span class="svgIcon svgIcon--star svgIcon--15px"><svg class="svgIcon-use" width="15" height="15"><path d="M7.438 2.324c.034-.099.09-.099.123 0l1.2 3.53a.29.29 0 0 0 .26.19h3.884c.11 0 .127.049.038.111L9.8 8.327a.271.271 0 0 0-.099.291l1.2 3.53c.034.1-.011.131-.098.069l-3.142-2.18a.303.303 0 0 0-.32 0l-3.145 2.182c-.087.06-.132.03-.099-.068l1.2-3.53a.271.271 0 0 0-.098-.292L2.056 6.146c-.087-.06-.071-.112.038-.112h3.884a.29.29 0 0 0 .26-.19l1.2-3.52z"></path></svg></span></span></p>
+                  <p class="text-body-date">Oct 13 - 15 min read <span class="u-paddingLeft4"><span
+                        class="svgIcon svgIcon--star svgIcon--15px"><svg class="svgIcon-use" width="15" height="15">
+                          <path
+                            d="M7.438 2.324c.034-.099.09-.099.123 0l1.2 3.53a.29.29 0 0 0 .26.19h3.884c.11 0 .127.049.038.111L9.8 8.327a.271.271 0 0 0-.099.291l1.2 3.53c.034.1-.011.131-.098.069l-3.142-2.18a.303.303 0 0 0-.32 0l-3.145 2.182c-.087.06-.132.03-.099-.068l1.2-3.53a.271.271 0 0 0-.098-.292L2.056 6.146c-.087-.06-.071-.112.038-.112h3.884a.29.29 0 0 0 .26-.19l1.2-3.52z">
+                          </path>
+                        </svg></span></span></p>
                 </div>
               </div>
               <div class="row">
@@ -304,7 +435,12 @@
                 <div class="col-10">
                   <p class="text-title mb-1"><b>What Really Happens When You Become an Overnight Millionaire?</b></p>
                   <p class="text-body mb-1">Stephanie Clifford</p>
-                  <p class="text-body-date">Sep 30 - 13 min read <span class="u-paddingLeft4"><span class="svgIcon svgIcon--star svgIcon--15px"><svg class="svgIcon-use" width="15" height="15"><path d="M7.438 2.324c.034-.099.09-.099.123 0l1.2 3.53a.29.29 0 0 0 .26.19h3.884c.11 0 .127.049.038.111L9.8 8.327a.271.271 0 0 0-.099.291l1.2 3.53c.034.1-.011.131-.098.069l-3.142-2.18a.303.303 0 0 0-.32 0l-3.145 2.182c-.087.06-.132.03-.099-.068l1.2-3.53a.271.271 0 0 0-.098-.292L2.056 6.146c-.087-.06-.071-.112.038-.112h3.884a.29.29 0 0 0 .26-.19l1.2-3.52z"></path></svg></span></span></p>
+                  <p class="text-body-date">Sep 30 - 13 min read <span class="u-paddingLeft4"><span
+                        class="svgIcon svgIcon--star svgIcon--15px"><svg class="svgIcon-use" width="15" height="15">
+                          <path
+                            d="M7.438 2.324c.034-.099.09-.099.123 0l1.2 3.53a.29.29 0 0 0 .26.19h3.884c.11 0 .127.049.038.111L9.8 8.327a.271.271 0 0 0-.099.291l1.2 3.53c.034.1-.011.131-.098.069l-3.142-2.18a.303.303 0 0 0-.32 0l-3.145 2.182c-.087.06-.132.03-.099-.068l1.2-3.53a.271.271 0 0 0-.098-.292L2.056 6.146c-.087-.06-.071-.112.038-.112h3.884a.29.29 0 0 0 .26-.19l1.2-3.52z">
+                          </path>
+                        </svg></span></span></p>
                 </div>
               </div>
               <div class="row">
@@ -314,8 +450,13 @@
                 <div class="col-10">
                   <p class="text-title mb-1"><b>Why Coding Your Own Makes You a Better Developer</b></p>
                   <p class="text-body mb-1">Danny Moerkerke in Better Progra...</p>
-                  <p class="text-body-date">Oct 7 - 4 min read <span class="u-paddingLeft4"><span class="svgIcon svgIcon--star svgIcon--15px"><svg class="svgIcon-use" width="15" height="15"><path d="M7.438 2.324c.034-.099.09-.099.123 0l1.2 3.53a.29.29 0 0 0 .26.19h3.884c.11 0 .127.049.038.111L9.8 8.327a.271.271 0 0 0-.099.291l1.2 3.53c.034.1-.011.131-.098.069l-3.142-2.18a.303.303 0 0 0-.32 0l-3.145 2.182c-.087.06-.132.03-.099-.068l1.2-3.53a.271.271 0 0 0-.098-.292L2.056 6.146c-.087-.06-.071-.112.038-.112h3.884a.29.29 0 0 0 .26-.19l1.2-3.52z"></path></svg></span></span></p>
-                  
+                  <p class="text-body-date">Oct 7 - 4 min read <span class="u-paddingLeft4"><span
+                        class="svgIcon svgIcon--star svgIcon--15px"><svg class="svgIcon-use" width="15" height="15">
+                          <path
+                            d="M7.438 2.324c.034-.099.09-.099.123 0l1.2 3.53a.29.29 0 0 0 .26.19h3.884c.11 0 .127.049.038.111L9.8 8.327a.271.271 0 0 0-.099.291l1.2 3.53c.034.1-.011.131-.098.069l-3.142-2.18a.303.303 0 0 0-.32 0l-3.145 2.182c-.087.06-.132.03-.099-.068l1.2-3.53a.271.271 0 0 0-.098-.292L2.056 6.146c-.087-.06-.071-.112.038-.112h3.884a.29.29 0 0 0 .26-.19l1.2-3.52z">
+                          </path>
+                        </svg></span></span></p>
+
                 </div>
               </div>
               <div class="row">
@@ -325,74 +466,58 @@
                 <div class="col-10">
                   <p class="text-title mb-1"><b>An Extremely Thorough Guide to This Year´s Flu Season</b></p>
                   <p class="text-body mb-1">Markham Heid in Elemental</p>
-                  <p class="text-body-date">Oct 7 - 12 min read <span class="u-paddingLeft4"><span class="svgIcon svgIcon--star svgIcon--15px"><svg class="svgIcon-use" width="15" height="15"><path d="M7.438 2.324c.034-.099.09-.099.123 0l1.2 3.53a.29.29 0 0 0 .26.19h3.884c.11 0 .127.049.038.111L9.8 8.327a.271.271 0 0 0-.099.291l1.2 3.53c.034.1-.011.131-.098.069l-3.142-2.18a.303.303 0 0 0-.32 0l-3.145 2.182c-.087.06-.132.03-.099-.068l1.2-3.53a.271.271 0 0 0-.098-.292L2.056 6.146c-.087-.06-.071-.112.038-.112h3.884a.29.29 0 0 0 .26-.19l1.2-3.52z"></path></svg></span></span></p>
+                  <p class="text-body-date">Oct 7 - 12 min read <span class="u-paddingLeft4"><span
+                        class="svgIcon svgIcon--star svgIcon--15px"><svg class="svgIcon-use" width="15" height="15">
+                          <path
+                            d="M7.438 2.324c.034-.099.09-.099.123 0l1.2 3.53a.29.29 0 0 0 .26.19h3.884c.11 0 .127.049.038.111L9.8 8.327a.271.271 0 0 0-.099.291l1.2 3.53c.034.1-.011.131-.098.069l-3.142-2.18a.303.303 0 0 0-.32 0l-3.145 2.182c-.087.06-.132.03-.099-.068l1.2-3.53a.271.271 0 0 0-.098-.292L2.056 6.146c-.087-.06-.071-.112.038-.112h3.884a.29.29 0 0 0 .26-.19l1.2-3.52z">
+                          </path>
+                        </svg></span></span></p>
                 </div>
               </div>
               <hr class="mt-5 mb-1">
-              <span class="text-body-top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Help &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span class="text-body-top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Help
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
               <span class="text-body-top">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
               <span class="text-body-top">Writers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
               <span class="text-body-top">Careers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
               <br>
-              <span class="text-body-top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Privacy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span class="text-body-top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Privacy
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
               <span class="text-body-top">Terms &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
               <span class="text-body-top">About &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             </div>
           </div>
-        <!--END ASIDE-->
+          <!--END ASIDE-->
         </div>
       </div>
     </div>
-  </section>
-  <!--END Interactive content-->
+    <!--END static content-->
 
-  <!--START Article dynamic-->
-  <section>
+
+    <!--START dynamic content-->
     <div class="container">
       <div class="row">
-        <div class="new-article-container bg-success content-wrapper col-12 col-lg-8">
-          <div class="new-articlecard bg-primary px-4 col-lg-12">
+        <div class="container-article-dynamic col-lg-8">
 
+        </div>
+        <div class="container-popular-dynamic col-lg-4 d-none d-lg-block">
 
-            <div class="sectionJquery bg-dark col-lg-12 my-5">
-              <div class="articleJquery bg-white pt-2 col-9"> 
-                <p class="title-jquery">${value.title}</p>
-                <p class="summary-jquery">${value.summary}</p>
-                <p class="autor-jquery">${value.name}</p>
-                <div class="buttom-jquery">
-                  <p class="createdate-jquery">
-                    <span id="${index}" class="postIdentifier"><img src="images/trash-icon.jpg" title="Eliminar Post"></span>
-                    <span class="create-jquery">${value.createDate}</span>              
-                  </p>
-                </div>
-              </div>
-              <div class="imgJquery bg-info p-0 col-3">
-                <img class="imgUrl" src="${value.imgUrl}" alt="">
-              </div>
-            </div>
-
-
-
-
-
-          </div>
-        </div> 
+        </div>
       </div>
     </div>
-  </section>
-  <!--END Article dynamic-->
-  
+    <!--END dynamic content-->
 
-<script src="js/jquery-3.4.1.min.js"></script>
+  </div>
+
+
+
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
     </script>
-    
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
 </html>
-
-

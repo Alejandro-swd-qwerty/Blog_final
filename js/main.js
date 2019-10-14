@@ -8,34 +8,42 @@ const getPosts = () => {
     success: (response) => {
       fillWithPosts(response)
       console.log(response)
+
     }
   });
 }
 
 getPosts() //aqui podria esta la funcion de loadingview pero si no hay màs que una pagina, pos mejor solo asì
 
+const addListeners = () => {
+
+  $(".delete-button").click(event => {
+
+    let dbKey = $(event.target).data("del-btn")
+    delPost(dbKey)
+
+  });
+}
+
 const fillWithPosts = (postsData) => {
 
   $.each(postsData, (index, value) => {
 
-
-
-
-    $(".new-articlecard").append(
-      `<div  class="sectionJquery bg-dark col-lg-12 my-5 data-toggle="modal" data-target="#postCard"">
-        <div class="articleJquery bg-white pt-2 col-8"> 
+    $(".container-article-dynamic").append(
+      `<div  class="section-jquery col-lg-12 my-5 data-toggle="modal" data-target="#postCard"">
+        <div class="article-jquery pt-2 col-8"> 
           <p class="title-jquery">${value.title}</p>
           <p class="summary-jquery">${value.summary}</p>
           <p class="autor-jquery">${value.name}</p>
           <div class="buttom-jquery">
             <p class="createdate-jquery">
-              <span id = "${index}" class="postIdentifier"><img src="images/trash-icon.jpg" title="Eliminar Post"></span>
+              <span><img class = "delete-button" data-del-btn = "${index}" src="images/trash-icon.jpg" title="Eliminar Post"></span>
               <span class="create-jquery">${value.createDate}</span>              
             </p>
           </div>
         </div>
-        <div class="imgJquery bg-info p-0 col-4">
-          <img class="imgUrl" src="${value.imgUrl}" alt="">
+        <div class="img-jquery p-0 col-4">
+          <img class="img-url" src="${value.imgUrl}" alt="">
         </div>
       </div>
       <!-- START Modal Post -->
@@ -67,6 +75,8 @@ const fillWithPosts = (postsData) => {
       <!-- END Modal Post -->`
     )
   })
+
+  addListeners()
 }
 
 const getDataFromButton = () => {
@@ -80,7 +90,7 @@ const getDataFromModal = () => {
   let name = $("#name").val();
   let preview = $("#preview").val();
   let content = $("#content").val();
-  let imgUrl = $("#imgUrl").val();
+  let imgUrl = $("#img-url").val();
   let createDate = new Date();
 
   let postObject = { title, name, preview, content, imgUrl, createDate }
@@ -96,25 +106,33 @@ const getDataFromModal = () => {
 };
 
 
+const delPost = (dbKey) => {
+  $.ajax({
+    method: "DELETE",
+    url: `https://blog-general.firebaseio.com/post/${dbKey}/.json`, 
+    success: () => {
+      getPosts()
 
+    }
+  });
+}
+
+
+
+
+/*
 let spanClass
 spanClass = document.getElementsByClassName("postIdentifier");
 
 console.log(spanClass)
 console.log(`spanClass.length: ${spanClass.length}`);
 
-//console.log(`spanClass.index 0: `);
-//console.log(spanClass[0].attributes[0])
-//console.log(`spanClass.index 1: `);
-//console.log(spanClass[1].attributes[0])
-
-/*
-let spanArray = Array.from(spanClass)
-console.log(`Array de SPANS `)
-console.log(spanArray)
+console.log(`spanClass.index 0: `);
+console.log(spanClass[0].attributes[0])
+console.log(`spanClass.index 1: `);
+console.log(spanClass[1].attributes[0])
 
 */
-
 const putsData = (response) => {
   $.ajax({
     method: "POST",
@@ -127,13 +145,27 @@ const putsData = (response) => {
   });
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 const delPost = () => {
-  $.ajax({ 
-    method: "GET", 
+  $.ajax({
+    method: "GET",
     url: "https://blog-general.firebaseio.com/post/.json",
     success: (response) => {
-      
+
     let postsIds = [];
     postsIds.push();
     console.log(postsIds);
@@ -145,3 +177,4 @@ const delPost = () => {
   });
  // });
  */
+
