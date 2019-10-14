@@ -133,7 +133,7 @@ margin: 0;
 margin-bottom: 5px;
 color: rgba(0,0,0,.84);
 font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-font-size: 18px;
+font-size: 2.2vw;
 line-height: 20px;
 transform: translateY(.96px);
 letter-spacing: -.17px;
@@ -154,7 +154,7 @@ overflow: hidden!important;
   -webkit-line-clamp: 2!important;
   -webkit-box-orient: vertical;
 font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-font-size: 16px;
+font-size: 1.7vw;
 line-height: 20px;
 transform: translateY(1.52px);
 font-weight: 400;
@@ -166,7 +166,7 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
 }
 .autor-jquery{
-font-size: 14px;
+font-size: 1.2vw;
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
   color:black;
   border-top: 4px;
@@ -223,7 +223,8 @@ top: -1px;
 .section-jquery:hover {
   -ms-transform: scale(1.08); /* IE 9 */
   -webkit-transform: scale(1.08); /* Safari 3-8 */
-  transform: scale(1.08); 
+  transform: scale(1.08);
+   
 }
 /* END CARD fit */
 /* START STYLE Aside*/
@@ -278,3 +279,40 @@ hr{
     margin-top: 1px;
 }
 /* END Cards statics*/
+
+
+/*START Dynamic Cards*/
+
+/* contenedor*/
+.sectionJquery{
+  display: flex;
+  justify-content: center;
+  height: 22vh;
+}
+
+.sectionJquery:hover {
+  -ms-transform: scale(1.08); /* IE 9 */
+  -webkit-transform: scale(1.08); /* Safari 3-8 */
+  transform: scale(1.08);
+}
+
+.sectionJquery{
+transition: transform .5s;
+}
+
+.articleJquery{
+  height: 22vh;
+  }
+  
+/* contenedor*/
+  .imgJquery{
+   height: 22vh;
+  }
+ /*imagen*/
+
+  .imgUrl{
+    width: 100%;
+    height: 100%;
+  }
+
+  /* END Dynamic Cards */
