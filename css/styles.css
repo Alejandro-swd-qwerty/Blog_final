@@ -1,280 +1,84 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+/* header static */
+.form{
+  border-image: 1px ;
+  width: 90px;
+  height: 105px;
 }
-/*START Este es el header*/
-@media only screen and (max-width: 1000px){
-.logo{
-  display: none;
-}
-} 
-@media only screen and (min-width: 1000px){
-.logo-small{
-  display: none;
-}
-}
-.logo-small{
-  margin-top: 10px;
-  background-size: 70px;
-  width: 70px;
-height: 70px;
-}  
 
-.header-nav-container{
-  /* background-color: aqua; */
-  height: 80px;
-  margin-bottom: 15px;
-  position: relative;
+.header-text-title{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
 }
-.nav-container{
-  /* background-color: red; */
-  height: 50px;
-  margin-bottom: 15px;
-  color: rgba(0,0,0,.54);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-style: none;
-  justify-content: space-around;
+
+.header-text-body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 0.87rem;
+  color: darkgray;
 }
-.logo{
-  height: 20px;
-  margin: 25px;
+
+.header-text-autor{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: .8rem;
 }
-.btn-outline-dark{
-  position: absolute;
-  right: 20px;
-  top: 20px;
+
+.header-text-date{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 0.75rem;
 }
-/*END Este es el header*/
-/* START Este es el contenido principal/contenido fijo */
-.principal-container{
-  margin-bottom: 15px;
-}
-.main-card-container{
-  /* background-color: blueviolet;
-  height: 200px; */
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-}
-.principal-card{
-  flex-direction: column;
-  /* background-color: pink; */
-  height: 67px;
-}
-.feature-card-container{
-  /* background-color: blue; */
-  height: 200px;
-}
-/* END Este es el contenido principal/contenido fijo */
-/* START Feature */
-.feature-container{
-  /* background-color: darkgoldenrod; */
-  height: 50px;
-  margin-bottom: 15px;
-}
-/* START Feature */
-/* START Interactive content */
-/* .interactive-card{
-  background-color: hotpink;
-  height: 200px;
-  margin-bottom: 15px;
+/* .aligment:hover{
+  width: 100px;
+  height: 150px;
 } */
-.static-card{
-  /* background-color: lightgreen;
-  height: 200px;
-  margin-bottom: 15px; */
-}
-/* START Interactive content */
-/* START Article dynamic */
-.new-article-card{
-/*  background-color: lightsalmon;*/
-  height: 200px;
-}
-/* END Article dynamic */
-/* START CARD fit */
-.feed-jquery{
-max-width:528px;
-max-height:171px;
-}
-.section-jquery{
-display: flex;
-justify-content: center;
-/* max-width:528px;
-max-height:171px; */
 
-}
-.article-jquery{
-padding: 5px;
-}
-.tag-topic{
---x-height-multiplier: 0;
---baseline-multiplier: 0;
-font-family: medium-content-sans-serif-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
-letter-spacing: 0;
-font-weight: 400;
-font-style: normal;
-text-rendering: optimizeLegibility;
--webkit-font-smoothing: antialiased;
-color: rgba(177, 172, 172, 0.774);
-visibility: visible;
-line-height: 20px;
-font-size: 14px;
-text-align: left;
-display: flex;
--webkit-box-align: center;
-align-items: center;
-margin-top: 1px;
-margin-bottom: 1px;
-text-transform: capitalize;
-}
-.title-jquery{
-margin: 0;
-margin-bottom: 5px;
-color: rgba(0,0,0,.84);
-font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-font-size: 18px;
-line-height: 20px;
-transform: translateY(.96px);
-letter-spacing: -.17px;
-font-weight: 600;
-max-height: 40px;
-text-overflow: ellipsis;
-/* Meter el texto en un contenido*/
-}
-.summary-jquery{
-text-align: left;
-margin-top: 2px;
-margin-bottom: 15px;
-color: rgba(0,0,0,.54);
-overflow: hidden!important;
-  max-height: 40px!important;
-  text-overflow: ellipsis!important;
-  display: -webkit-box!important;
-  -webkit-line-clamp: 2!important;
-  -webkit-box-orient: vertical;
-font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-font-size: 16px;
-line-height: 20px;
-transform: translateY(1.52px);
-font-weight: 400;
-overflow: hidden;
-max-height: 40px;
-text-overflow: ellipsis;
-display: -webkit-box;
--webkit-line-clamp: 2;
--webkit-box-orient: vertical;
-}
-.autor-jquery{
-font-size: 14px;
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-  color:black;
-  border-top: 4px;
-  border-bottom: 1px;
-  margin-top: 1px;
-}
-.createdate-jquery{
-margin-top: 2px;
-margin-bottom: 2px;
-font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-font-style: italic;
-font-size: 11px;
-align-content: center;
-}
-.img-jquery{
-height: 150px;
-line-height: 150px;
-padding: 10px;
-margin: 5px;
-}
-.img-url{
-margin: 0;
-top: 50%;
-padding:5px;
-line-height: 20px;
--webkit-box-flex: 0;
-flex: 0 0 auto;
-margin-right: 0;
-width: 160px;
-height: 160px;
-background-position: 50% 50% ;
-}
-.svg-jquery{
-display: inline-block;
-height: 10px;
-width: 10px;
-}
-.buttom-jquery{
-position: relative;
-}
-.svgIcon-use{
-position: absolute;
-right: 40px;
-top: -1px; 
-} 
-* {
-  box-sizing: border-box;
-}
-.section-jquery {
-  transition: transform .5s;
-  
-  
-}
-.section-jquery:hover {
-  -ms-transform: scale(1.08); /* IE 9 */
-  -webkit-transform: scale(1.08); /* Safari 3-8 */
-  transform: scale(1.08); 
-}
-/* END CARD fit */
-/* START STYLE Aside*/
-.text-title-content{
+/* header static */
+
+/* aside */
+.text-title-list{
   color: black;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1rem;
 }
+
 hr{
   border-width: 1px;
 }
+
 .number-size{
   color: #D8D8D8;
   font-size: 1.9rem;
 }
-.text-title{
+
+.text-title-content{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1rem;
 }
-.text-body{
+
+.text-body-content{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 0.9rem;
 }
+
 .text-body-date{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: slategrey;
   font-size: 0.75rem;
 }
+
+.diamond{ 
+  max-width: 10px;
+  max-height: 10px;
+}
+
 .text-body-top{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: slategrey;
   font-size: 0.75rem;
 }
-/*END STYLE Aside*/
+/* Efecto de cuadrado con evento  ¿Funicona?*/
+/* .diamond::after{ 
+  max-width: 100px;
+  max-height: 180px;
+} */
 
-/* START Cards statics*/
-.title-jquery-card{
-  margin: 0;
-  margin-bottom: 5px;
-  color: rgba(0,0,0,.84);
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-  /* Meter el texto en un contenido*/
-}
-.autor-jquery-card{
-  font-size: 12px;
-    font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-    color:rgb(77, 77, 77);
-    border-top: 4px;
-    border-bottom: 1px;
-    margin-top: 1px;
-}
-/* END Cards statics*/
+
+/* aside */
