@@ -20,7 +20,7 @@ const fillWithPosts = (postsData) => {
   $.each(postsData, (index, value) => {
     $(".new-articlecard").append(
       `<div id="${index}"class="sectionJquery bg-dark col-lg-12 my-5" data-toggle="modal" data-target="#postCard">
-        <div class="articleJquery bg-white col-9">
+        <div class="articleJquery bg-white pt-2 col-9"> 
           <p class="title-jquery">${value.title}</p>
           <p class="summary-jquery">${value.summary}</p>
           <p class="autor-jquery">${value.name}</p>
@@ -103,15 +103,3 @@ const putsData = (response) => {
     }
   });
 }
-/*
-var messageListRef = firebase.database().ref('message_list');
-var newMessageRef = messageListRef.push();
-newMessageRef.set({
-  'user_id': 'ada',
-  'text': 'The Analytical Engine weaves algebraical patterns just as the Jacquard loom weaves flowers and leaves.'
-});
-// We've appended a new message to the message_list location.
-var path = newMessageRef.toString();
-// path will be something like
-// 'https://sample-app.firebaseio.com/message_list/-IKo28nwJLH0Nc5XeFmj'
-*/
