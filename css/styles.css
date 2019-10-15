@@ -201,12 +201,12 @@
 /* START dynamic container*/
 .container-article-dynamic{
     height: 100px;
-    background-color: palegreen;
+    
 }
 
 .container-popular-dynamic{
     height: 100px;
-    background-color: sandybrown;
+    
 }
 /* START dynamic container*/
 
@@ -226,6 +226,7 @@
   hr{
     border-width: 1px;
   }
+  
   .number-size{
     color: #D8D8D8;
     font-size: 1.9rem;
