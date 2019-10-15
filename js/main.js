@@ -119,20 +119,6 @@ const delPost = (dbKey) => {
 
 
 
-
-/*
-let spanClass
-spanClass = document.getElementsByClassName("postIdentifier");
-
-console.log(spanClass)
-console.log(`spanClass.length: ${spanClass.length}`);
-
-console.log(`spanClass.index 0: `);
-console.log(spanClass[0].attributes[0])
-console.log(`spanClass.index 1: `);
-console.log(spanClass[1].attributes[0])
-
-*/
 const putsData = (response) => {
   $.ajax({
     method: "POST",
@@ -145,36 +131,58 @@ const putsData = (response) => {
   });
 }
 
+function getSelecter(){
+  let propiedadAOrdenar = "";
 
+           if ($("#inlineRadio1").is( ":checked" )){
+              //alert("propiedad nombre")
+              return propiedadAOrdenar = "name";
+          }else if ($("#inlineRadio2").is( ":checked" )){
+              //alert("propiedad fecha")
+              return propiedadAOrdenar = "createDate";
+          }else if ($("#inlineRadio3").is( ":checked" )){
+              //alert("propiedad titulo")
+              return propiedadAOrdenar = "title";
+          }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const delPost = () => {
-  $.ajax({
-    method: "GET",
-    url: "https://blog-general.firebaseio.com/post/.json",
-    success: (response) => {
-
-    let postsIds = [];
-    postsIds.push();
-    console.log(postsIds);
 }
 
-//$(document).ready(function(){
-  $("p").click(function() {
-  $(this).slideUp()
-  });
- // });
- */
+var sortThisPls = (response, propiedadAOrdenar) => {
+  let sinCorchetes = "";
+  let algo = response.sort(function (a, b) {
+      var x = a[propiedadAOrdenar];
+      var y = b[propiedadAOrdenar];
 
+      if (true) {
+          return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+      }
+  });
+  //console.log(algo)
+  sinCorchetes = algo.slice(1,-1) 
+  //console.log(typeof(sinCorchetes))
+  return sinCorchetes
+}
+
+
+function ORDER_PLS() {
+  $.ajax({
+      method:"GET",
+      url: 'https://blog-general.firebaseio.com/post/.json',
+      success: (response) => {
+          //alert("sacando y ordenado")
+          //console.log(response)
+          let array = []
+          for (cosas in response){
+              //console.log(response[cosas])
+              array.push(response[cosas])
+          }
+          fillWithPosts(sortThisPls(array, getSelecter()));
+
+          let fecha = new Date().toLocaleString('en-GB', { timeZone: 'UTC' }) //////ASI PONGAN LA FECHA
+          console.log(fecha)
+
+      }
+
+  });
+
+}
