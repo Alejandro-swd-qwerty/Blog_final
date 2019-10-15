@@ -201,12 +201,12 @@
 /* START dynamic container*/
 .container-article-dynamic{
     height: 100px;
-    background-color: palegreen;
+    
 }
 
 .container-popular-dynamic{
     height: 100px;
-    background-color: sandybrown;
+    
 }
 /* START dynamic container*/
 
@@ -216,6 +216,9 @@
 ------------*/
 
 /* START STYLE Aside*/
+.col-10:hover{
+  color: darkgrey;
+}
 .text-title-content{
     color: black;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
